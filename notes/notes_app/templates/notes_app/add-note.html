@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <form method="post" action="/notes-app/save-note" id="add_note_text">
+        {% csrf_token %}
+        <div class="form-group">
+            <div class="note-form" >
+                <label for="exampleFormControlTextarea1" class="note-form-title">Ваша заметка:</label>
+                <span class="note-form-submit"><button type="submit" class="btn btn-success">Сохранить</button></span>
+            </div>
+
+            <textarea name="note-text" class="form-control note-area" id="exampleFormControlTextarea1" rows="10"
+                      form="add_note_text"></textarea>
+        </div>
+
+    </form>
+
+
+{% endblock %}

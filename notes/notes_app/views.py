@@ -1,4 +1,7 @@
+import json
+
 from django.contrib.auth import authenticate, login
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .forms import SignupForm, LoginForm
 
@@ -38,3 +41,16 @@ def signin(request):
     else:
         form = LoginForm()
     return render(request, 'registration/login.html', {'form': form})
+
+
+def add_note(request):
+        return render(request, 'notes_app/add-note.html')
+
+
+def save_note(request):
+    # текст заметки
+    text = request.POST['note-text']
+    print('miu: ' + text)
+
+    #поменять то что нужно вернуть
+    return HttpResponse(status=200)
