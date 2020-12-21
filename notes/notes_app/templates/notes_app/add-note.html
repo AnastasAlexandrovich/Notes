@@ -2,19 +2,28 @@
 
 {% block content %}
 
-    <form method="post" action="/notes-app/save-note" id="add_note_text">
-        {% csrf_token %}
-        <div class="form-group">
-            <div class="note-form" >
-                <label for="exampleFormControlTextarea1" class="note-form-title">Ваша заметка:</label>
-                <span class="note-form-submit"><button type="submit" class="btn btn-success">Сохранить</button></span>
+    <div class="note-form-view">
+        <form method="post" action="/notes-app/save-note" id="add_note_text">
+            {% csrf_token %}
+            <div class="form-group">
+                <div class="note-form">
+                    <label for="exampleFormControlTextarea1" class="note-form-title">Ваша заметка:</label>
+                    <span class="note-form-submit"><button type="submit"
+                                                           class="btn btn-success">Сохранить</button></span>
+                </div>
+                <textarea name="note-text" class="form-control note-area" id="exampleFormControlTextarea1" rows="10"
+                          form="add_note_text"></textarea>
             </div>
 
-            <textarea name="note-text" class="form-control note-area" id="exampleFormControlTextarea1" rows="10"
-                      form="add_note_text"></textarea>
+        </form>
+    </div>
+
+    {% if is_empty == True %}
+        <div class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Ошибка:</span>
+            Заметка не может быть пустой!
         </div>
-
-    </form>
-
+    {% endif %}
 
 {% endblock %}

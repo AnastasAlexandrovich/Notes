@@ -1,5 +1,20 @@
 {% extends "base.html" %}
 
 {% block content %}
-    главная
+
+    <div class="title-position">
+        <div class="jumbotron">
+            <div class="container">
+                <h1>Заметки</h1>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block notescontent %}
+    {% if user.is_authenticated %}
+        <div class="notes-amount-main">
+            <div class="notes-amount">Всего заметок: {{ count }}</div>
+        </div>
+    {% endif %}
 {% endblock %}

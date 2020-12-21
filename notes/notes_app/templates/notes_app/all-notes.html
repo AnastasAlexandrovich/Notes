@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block notescontent %}
+
+    <div class="notes-center">
+        <div class="row overflow-auto">
+            {% for note_record in notes_records %}
+                <div class="span5 notes-box">
+                    <p>{{ note_record.note_text }}</p>
+                    <span>{{ note_record.date }}</span>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+{% endblock %}

@@ -19,9 +19,8 @@
 .main-content {
     margin-left: 300px;
     margin-right: 100px;
-    top: 60px;
-    position: fixed;
-    width: 70%;
+    position: absolute;
+    top: 43px;
 }
 
 .content-align {
@@ -153,6 +152,48 @@
     margin-left: 30px;
 }
 
-.note-form{
+.note-form {
     padding-bottom: 10px;
+}
+
+.title-position {
+    margin-left: 40%;
+}
+
+.notes-amount-main {
+    font-size: 20px;
+    max-width: 350px;
+    width: 100% !important;
+    background-color: #F7F7F7;
+    margin: 0 auto;
+    border-radius: 2px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    height: 100px;
+    padding-top: 10px;
+
+}
+
+.notes-amount {
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.notes-box {
+    background-color: #F7F7F7;
+    border-radius: 2px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    height: 210px;
+    margin-bottom: 10px;
+}
+
+.note-form-view {
+    width: 700px;
+    padding-top: 15px;
+}
+
+.loginbox {
+    width: 900px;
+    padding-top: 15px;
 }

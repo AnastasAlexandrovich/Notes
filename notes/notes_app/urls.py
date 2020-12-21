@@ -4,9 +4,11 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('index', views.index),
+    path('index', views.index, name='index'),
     path('register', views.register, name='register'),
-    path('login', views.signin, name='login'),
+    path('login', views.sign_in, name='login'),
     path('add-note', views.add_note),
-    path('save-note', views.save_note)
+    path('save-note', views.save_note),
+    path('all-notes', views.all_notes, name='all_notes'),
+    path('logout', views.sign_out, name='logout')
 ]

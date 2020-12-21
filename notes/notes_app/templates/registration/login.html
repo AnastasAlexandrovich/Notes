@@ -1,38 +1,27 @@
 {% extends "base.html" %}
 
-
-
 {% block content %}
-
-
-    <div>
+    <div class="loginbox">
         <div class="modal-dialog">
             <div class="loginmodal-container">
                 <h1>Login to Your Account</h1><br>
                 <form method="post" action="{% url 'login' %}">
                     {% csrf_token %}
-                   {% for field in form %}
-                            {{ field.label_tag }}
-                            {{ field }}
-                            {% if field.help_text %}
-                                <small style="display: none">{{ field.help_text }}</small>
-                            {% endif %}
-                            {% for error in field.errors %}
-                                <p style="color: red">{{ error }}</p>
-                            {% endfor %}
+                    {% for field in form %}
+                        {{ field.label_tag }}
+                        {{ field }}
+                        {% if field.help_text %}
+                            <small style="display: none">{{ field.help_text }}</small>
+                        {% endif %}
+                        {% for error in field.errors %}
+                            <p style="color: red">{{ error }}</p>
+                        {% endfor %}
 
                     {% endfor %}
-{#                    <input type="email" name="user" placeholder="Email">#}
-{#                    <input type="password" name="pass" placeholder="Password">#}
                     <input type="submit" name="login" class="login loginmodal-submit" value="Login">
                     <input type="hidden" name="next" value="{{ next }}">
                 </form>
             </div>
         </div>
     </div>
-
-        {% if user.is_authenticated == false %}
-                    <a>mur</a>
-                {% endif %}
-
 {% endblock %}

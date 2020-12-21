@@ -21,6 +21,7 @@
         body {
             padding-top: 60px;
             padding-bottom: 40px;
+            overflow: auto;
         }
 
         .sidebar-nav {
@@ -49,41 +50,45 @@
     </div>
 </div>
 
-<div class="menu-size">
-    <div class="well sidebar-nav">
-        <ul class="nav nav-list">
-            <li class="nav-header">ГЛАВНОЕ МЕНЮ</li>
-            <div class="vertical-menu">
-                {% if user.is_authenticated %}
-                    <a>На главную</a>
-                    <a>Список заметок</a>
-                    <a href="add-note">Добавить заметку</a>
-                    <a>Выйти</a>
-                {% else %}
-                    <a>На главную</a>
-                    <a>Авторизация</a>
-                    <a>Регистрация</a>
-                {% endif %}
-                {% block menulinks %} {% endblock %}
+<div>
+    <div class="menu-size">
+        <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+                <li class="nav-header">ГЛАВНОЕ МЕНЮ</li>
+                <div class="vertical-menu">
+                    {% if user.is_authenticated %}
+                        <a href="index">На главную</a>
+                        <a href="all-notes">Список заметок</a>
+                        <a href="add-note">Добавить заметку</a>
+                        <a href="logout">Выйти</a>
+                    {% else %}
+                        <a href="index">На главную</a>
+                        <a href="login">Авторизация</a>
+                        <a href="register">Регистрация</a>
+                    {% endif %}
+                    {% block menulinks %} {% endblock %}
+                </div>
+
+            </ul>
+        </div><!--/.well -->
+    </div><!--/span-->
+
+    <div class="container-fluid main-content center-block">
+        <div class="row-fluid">
+            <div class="content-align">
+                {% block content %} {% endblock %}
             </div>
+        </div><!--/row-->
 
-        </ul>
-    </div><!--/.well -->
-</div><!--/span-->
+        {% block notescontent %}
 
-<div class="container-fluid main-content">
-    <div class="row-fluid">
-        <div class="content-align">
-            {% block content %} {% endblock %}
-        </div>
-    </div><!--/row-->
+        {% endblock %}
 
-    <hr>
-
-    <footer class="">
-        <p>&copy; 2020</p>
-    </footer>
+    </div>
 
 </div><!--/.fluid-container-->
+</div>
+
+
 </body>
 </html>

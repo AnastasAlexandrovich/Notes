@@ -47,3 +47,9 @@ class User(AbstractUser):
     REQUIRED_FIELDS = []
 
     objects = UserManager()
+
+
+class Note(models.Model):
+    user_email = models.EmailField(_('email address'))
+    note_text = models.TextField(blank=False)
+    date = models.DateTimeField()
