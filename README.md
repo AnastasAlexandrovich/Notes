@@ -14,6 +14,6 @@ DATABASES = {
 }
 поменяйте пароль для пользователя postgres на тот, который используете
 
-2. перейдите в папку notes/notes
+2. перейдите в папку notes
 3. выполните команду docker-compose up --build
 4. перейдите по ссылке localhost:8000/notes-app/index
